@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>جارٍ التحويل… — Boutique</title>
+  <!-- إعادة توجيه تلقائية بعد ثانية واحدة -->
+  <meta http-equiv="refresh" content="1;url=Website/index.html">
+  <meta name="robots" content="noindex">
+  <style>
+    body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:1rem;background:#f7fafc;color:#0f172a}
+    .card{max-width:720px;border-radius:12px;padding:1.25rem 1.5rem;background:#fff;box-shadow:0 6px 18px rgba(2,6,23,0.08);text-align:center}
+    a{color:#0366d6;text-decoration:none}
+    small{display:block;margin-top:.75rem;color:#64748b}
+  </style>
+  <script>
+    // احتياطي — تحويل فوري عبر جافاسكربت (لمنع التأخير لو تعطلت الميتا)
+    (function(){
+      try{
+        var target = 'Website/index.html';
+        // نتحقق إن الصفحة الهدف موجودة بالنسبة للمسار النسبي
+        window.location.replace(target);
+      }catch(e){
+        // لا نكسر الصفحة إذا فشلت التحويل
+        console.error(e);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="card">
+    <h1>جارٍ التحويل إلى موقع المشروع…</h1>
+    <p>إذا لم يتم تحويلك تلقائيًا، اضغط على الرابط أدناه للوصول إلى الموقع:</p>
+    <p><a href="Website/index.html">اذهب إلى الموقع</a></p>
+    <small>إذا رغبت أن يُفتح الموقع مباشرة من جذر المستودع (بدون تحويل)، ضع ملف index.html في جذر الريبو أو غيّر إعدادات GitHub Pages لتستخدم المجلد <code>/Website</code>.</small>
+  </div>
+</body>
+</html>
