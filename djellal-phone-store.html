@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djellal Boutique - أحدث الهواتف الذكية في الجزائر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .logo-flag {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(to right, #006233 50%, white 50%, white 50%, #d21034 50%);
+            border-radius: 50%;
+            border: 2px solid #667eea;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #555;
+        }
+
+        .contact-item i {
+            color: #667eea;
+        }
+
+        /* Search Bar */
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem auto 0;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 2px solid #667eea;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        /* Payment Plans Section */
+        .payment-plans {
+            background: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .payment-plans h2 {
+            color: #667eea;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .plan-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .plan-card .percentage {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        /* Filters */
+        .filters-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .filter-group select, .filter-group input {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .filter-group select:focus, .filter-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        /* Products Grid */
+        .products-section {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background: #f8f9fa;
+            padding: 1rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-brand {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            color: #d21034;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .product-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+        }
+
+        .spec-item i {
+            color: #667eea;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .product-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+        }
+
+        .btn-call {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-call:hover {
+            background: #0056b3;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #667eea;
+            z-index: 10;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .modal-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .spec-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+        }
+
+        .spec-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .payment-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            text-align: right;
+        }
+
+        .payment-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .payment-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: right;
+        }
+
+        .footer-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #666;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-flag"></div>
+                <span>Djellal Boutique</span>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+213 540 203 685</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ch9work@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>البويرة، سور الغزلان</span>
+                </div>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-box" id="searchBox" placeholder="ابحث عن هاتفك المفضل... (اسم، شركة، مواصفات)">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>🚀 أحدث الهواتف الذكية بأفضل الأسعار في الجزائر</h1>
+        <p>اختر هاتفك المثالي مع خطط تقسيط مرنة تناسب ميزانيتك</p>
+    </section>
+
+    <!-- Payment Plans -->
+    <section class="payment-plans">
+        <h2>خطط الدفع والتقسيط المرنة</h2>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3>الدفع الكامل</h3>
+                <div class="percentage">0%</div>
+                <p>السعر الأصلي بدون زيادة</p>
+                <p>دفعة واحدة</p>
+            </div>
+            <div class="plan-card">
+                <h3>التقسيط 6 أشهر</h3>
+                <div class="percentage">+25%</div>
+                <p>6 أقساط شهرية متساوية</p>
+                <p>مريحة وسهلة</p>
+            </div>
+            <div class="plan-card">
+                <h3>التقسيط 8 أشهر</h3>
+                <div class="percentage">+35%</div>
+                <p>8 أقساط شهرية متساوية</p>
+                <p>خيار ممتاز</p>
+            </div>
+            <div class="plan-card">
+                <h3>التقسيط 12 شهر</h3>
+                <div class="percentage">+45%</div>
+                <p>12 قسط شهري متساوي</p>
+                <p>الأكثر مرونة</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <h2 style="text-align: center; color: #667eea; margin-bottom: 1.5rem;">فلترة وترتيب المنتجات</h2>
+        <div class="filters-grid">
+            <div class="filter-group">
+                <label>الشركة المصنعة</label>
+                <select id="brandFilter">
+                    <option value="">الكل</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Xiaomi">Xiaomi</option>
+                    <option value="Huawei">Huawei</option>
+                    <option value="OnePlus">OnePlus</option>
+                    <option value="Google">Google</option>
+                    <option value="Oppo">Oppo</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>نوع الشاشة</label>
+                <select id="displayFilter">
+                    <option value="">الكل</option>
+                    <option value="AMOLED">AMOLED</option>
+                    <option value="OLED">OLED</option>
+                    <option value="Super Retina">Super Retina</option>
+                    <option value="IPS LCD">IPS LCD</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>معدل التحديث</label>
+                <select id="refreshFilter">
+                    <option value="">الكل</option>
+                    <option value="60">60Hz</option>
+                    <option value="90">90Hz</option>
+                    <option value="120">120Hz</option>
+                    <option value="144">144Hz</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>ترتيب حسب</label>
+                <select id="sortFilter">
+                    <option value="newest">الأحدث</option>
+                    <option value="price-low">السعر: من الأقل للأعلى</option>
+                    <option value="price-high">السعر: من الأعلى للأقل</option>
+                    <option value="rating">الأعلى تقييماً</option>
+                    <option value="refresh">أفضل معدل تحديث</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section">
+        <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن المتجر</h3>
+                <p>Djellal Boutique متخصصون في بيع أحدث الهواتف الذكية بأفضل الأسعار في الجزائر</p>
+                <p>نوفر خطط تقسيط مرنة تناسب الجميع</p>
+            </div>
+            <div class="footer-section">
+                <h3>التواصل معنا</h3>
+                <a href="tel:+213540203685"><i class="fas fa-phone"></i> +213 540 203 685</a>
+                <a href="https://wa.me/213540203685"><i class="fab fa-whatsapp"></i> واتساب</a>
+                <a href="mailto:ch9work@gmail.com"><i class="fas fa-envelope"></i> ch9work@gmail.com</a>
+                <a href="https://maps.app.goo.gl/nXyDHoz3L5cqUxzV6" target="_blank"><i class="fas fa-map-marker-alt"></i> البويرة، سور الغزلان</a>
+            </div>
+            <div class="footer-section">
+                <h3>خدماتنا</h3>
+                <p>✓ ضمان شامل على جميع المنتجات</p>
+                <p>✓ خطط تقسيط مرنة</p>
+                <p>✓ خدمة عملاء 24/7</p>
+                <p>✓ توصيل لجميع الولايات</p>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="https://wa.me/213540203685" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+213540203685"><i class="fas fa-phone"></i></a>
+            <a href="mailto:ch9work@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 2rem; color: #999;">© 2025 Djellal Boutique. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // بيانات المنتجات
+        const products = [
+            {
+                id: 1,
+                name: "iPhone 15 Pro Max",
+                brand: "Apple",
+                price: 280000,
+                image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
+                rating: 5,
+                display: "Super Retina",
+                displaySize: "6.7\"",
+                refreshRate: 120,
+                ram: "8GB",
+                storage: "256GB",
+                camera: "48MP",
+                battery: "4422mAh",
+                processor: "A17 Pro Bionic",
+                os: "iOS 17",
+                charging: "27W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 2,
+                name: "Samsung Galaxy S24 Ultra",
+                brand: "Samsung",
+                price: 320000,
+                image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500",
+                rating: 5,
+                display: "AMOLED",
+                displaySize: "6.8\"",
+                refreshRate: 120,
+                ram: "12GB",
+                storage: "512GB",
+                camera: "200MP",
+                battery: "5000mAh",
+                processor: "Snapdragon 8 Gen 3",
+                os: "Android 14",
+                charging: "45W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 3,
+                name: "Xiaomi 14 Pro",
+                brand: "Xiaomi",
+                price: 180000,
+                image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500",
+                rating: 4.5,
+                display: "AMOLED",
+                displaySize: "6.73\"",
+                refreshRate: 120,
+                ram: "12GB",
+                storage: "256GB",
+                camera: "50MP",
+                battery: "4880mAh",
+                processor: "Snapdragon 8 Gen 3",
+                os: "Android 14",
+                charging: "120W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 4,
+                name: "OnePlus 12",
+                brand: "OnePlus",
+                price: 195000,
+                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500",
+                rating: 4.5,
+                display: "AMOLED",
+                displaySize: "6.82\"",
+                refreshRate: 120,
+                ram: "16GB",
+                storage: "512GB",
+                camera: "50MP",
+                battery: "5400mAh",
+                processor: "Snapdragon 8 Gen 3",
+                os: "Android 14",
+                charging: "100W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 5,
+                name: "Google Pixel 8 Pro",
+                brand: "Google",
+                price: 225000,
+                image: "https://images.unsplash.com/photo-1598618443855-232ee0f819f2?w=500",
+                rating: 4.5,
+                display: "OLED",
+                displaySize: "6.7\"",
+                refreshRate: 120,
+                ram: "12GB",
+                storage: "256GB",
+                camera: "50MP",
+                battery: "5050mAh",
+                processor: "Google Tensor G3",
+                os: "Android 14",
+                charging: "30W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 6,
+                name: "Samsung Galaxy A54",
+                brand: "Samsung",
+                price: 95000,
+                image: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500",
+                rating: 4,
+                display: "AMOLED",
+                displaySize: "6.4\"",
+                refreshRate: 120,
+                ram: "8GB",
+                storage: "256GB",
+                camera: "50MP",
+                battery: "5000mAh",
+                processor: "Exynos 1380",
+                os: "Android 13",
+                charging: "25W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 7,
+                name: "Xiaomi Redmi Note 13 Pro",
+                brand: "Xiaomi",
+                price: 75000,
+                image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500",
+                rating: 4,
+                display: "AMOLED",
+                displaySize: "6.67\"",
+                refreshRate: 120,
+                ram: "8GB",
+                storage: "256GB",
+                camera: "200MP",
+                battery: "5000mAh",
+                processor: "Snapdragon 7s Gen 2",
+                os: "Android 13",
+                charging: "67W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 8,
+                name: "Oppo Find X7",
+                brand: "Oppo",
+                price: 165000,
+                image: "https://images.unsplash.com/photo-1592286927505-83d1b7105050?w=500",
+                rating: 4.5,
+                display: "AMOLED",
+                displaySize: "6.78\"",
+                refreshRate: 120,
+                ram: "12GB",
+                storage: "256GB",
+                camera: "50MP",
+                battery: "5000mAh",
+                processor: "MediaTek Dimensity 9300",
+                os: "Android 14",
+                charging: "100W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 9,
+                name: "Huawei Pura 70 Ultra",
+                brand: "Huawei",
+                price: 210000,
+                image: "https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=500",
+                rating: 4.5,
+                display: "OLED",
+                displaySize: "6.8\"",
+                refreshRate: 120,
+                ram: "16GB",
+                storage: "512GB",
+                camera: "50MP",
+                battery: "5200mAh",
+                processor: "Kirin 9010",
+                os: "HarmonyOS 4",
+                charging: "100W Fast Charging",
+                network: "5G"
+            },
+            {
+                id: 10,
+                name: "iPhone 14",
+                brand: "Apple",
+                price: 185000,
+                image: "https://images.unsplash.com/photo-1678652578753-2111c2f86d35?w=500",
+                rating: 4.5,
+                display: "Super Retina",
+                displaySize: "6.1\"",
+                refreshRate: 60,
+                ram: "6GB",
+                storage: "128GB",
+                camera: "12MP",
+                battery: "3279mAh",
+                processor: "A15 Bionic",
+                os: "iOS 17",
+                charging: "20W Fast Charging",
+                network: "5G"
+            }
+        ];
+
+        // حساب أسعار التقسيط
+        function calculateInstallments(price) {
+            return {
+                full: price,
+                months6: Math.round(price * 1.25),
+                months8: Math.round(price * 1.35),
+                months12: Math.round(price * 1.45)
+            };
+        }
+
+        // عرض المنتجات
+        function displayProducts(filteredProducts = products) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            filteredProducts.forEach(product => {
+                const installments = calculateInstallments(product.price);
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand}</div>
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">${product.price.toLocaleString()} DZD</div>
+                        <div class="product-rating">
+                            ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-memory"></i>
+                                <span>${product.ram} RAM</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-hdd"></i>
+                                <span>${product.storage}</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-tv"></i>
+                                <span>${product.display} ${product.refreshRate}Hz</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-camera"></i>
+                                <span>${product.camera}</span>
+                            </div>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.85rem;">
+                            <div style="font-weight: bold; color: #667eea; margin-bottom: 0.5rem;">خطط التقسيط:</div>
+                            <div>6 أشهر: ${Math.round(installments.months6/6).toLocaleString()} DZD/شهر</div>
+                            <div>8 أشهر: ${Math.round(installments.months8/8).toLocaleString()} DZD/شهر</div>
+                            <div>12 شهر: ${Math.round(installments.months12/12).toLocaleString()} DZD/شهر</div>
+                        </div>
+                        <div class="product-buttons">
+                            <button class="btn btn-primary" onclick="showProductDetails(${product.id})">
+                                <i class="fas fa-info-circle"></i> عرض التفاصيل
+                            </button>
+                            <a href="https://wa.me/213540203685?text=مرحباً، أريد الاستفسار عن ${product.name}" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="tel:+213540203685" class="btn btn-call">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // عرض تفاصيل المنتج
+        function showProductDetails(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const installments = calculateInstallments(product.price);
+            const modal = document.getElementById('productModal');
+            const modalBody = document.getElementById('modalBody');
+
+            modalBody.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="modal-image">
+                <div style="text-align: center;">
+                    <div style="color: #667eea; font-weight: bold; margin-bottom: 0.5rem;">${product.brand}</div>
+                    <h2 style="color: #333; margin-bottom: 1rem;">${product.name}</h2>
+                    <div style="font-size: 2rem; color: #d21034; font-weight: bold; margin-bottom: 1rem;">
+                        ${product.price.toLocaleString()} DZD
+                    </div>
+                    <div style="color: #ffc107; font-size: 1.5rem; margin-bottom: 2rem;">
+                        ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
+                    </div>
+                </div>
+
+                <h3 style="color: #667eea; margin: 2rem 0 1rem;">جدول خطط الدفع والتقسيط</h3>
+                <table class="payment-table">
+                    <thead>
+                        <tr>
+                            <th>نوع الخطة</th>
+                            <th>السعر الإجمالي</th>
+                            <th>القسط الشهري</th>
+                            <th>نسبة الزيادة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>الدفع الكامل</strong></td>
+                            <td><strong>${installments.full.toLocaleString()} DZD</strong></td>
+                            <td>دفعة واحدة</td>
+                            <td style="color: #28a745;">0%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>التقسيط 6 أشهر</strong></td>
+                            <td>${installments.months6.toLocaleString()} DZD</td>
+                            <td><strong>${Math.round(installments.months6/6).toLocaleString()} DZD</strong></td>
+                            <td style="color: #ffc107;">+25%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>التقسيط 8 أشهر</strong></td>
+                            <td>${installments.months8.toLocaleString()} DZD</td>
+                            <td><strong>${Math.round(installments.months8/8).toLocaleString()} DZD</strong></td>
+                            <td style="color: #ff9800;">+35%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>التقسيط 12 شهر</strong></td>
+                            <td>${installments.months12.toLocaleString()} DZD</td>
+                            <td><strong>${Math.round(installments.months12/12).toLocaleString()} DZD</strong></td>
+                            <td style="color: #f44336;">+45%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="color: #667eea; margin: 2rem 0 1rem;">المواصفات التقنية الكاملة</h3>
+                <div class="modal-specs">
+                    <div class="spec-card">
+                        <h4><i class="fas fa-tv"></i> الشاشة</h4>
+                        <p><strong>الحجم:</strong> ${product.displaySize}</p>
+                        <p><strong>النوع:</strong> ${product.display}</p>
+                        <p><strong>معدل التحديث:</strong> ${product.refreshRate}Hz</p>
+                    </div>
+                    <div class="spec-card">
+                        <h4><i class="fas fa-microchip"></i> الأداء</h4>
+                        <p><strong>المعالج:</strong> ${product.processor}</p>
+                        <p><strong>RAM:</strong> ${product.ram}</p>
+                        <p><strong>التخزين:</strong> ${product.storage}</p>
+                        <p><strong>النظام:</strong> ${product.os}</p>
+                    </div>
+                    <div class="spec-card">
+                        <h4><i class="fas fa-camera"></i> الكاميرا</h4>
+                        <p><strong>الكاميرا الرئيسية:</strong> ${product.camera}</p>
+                        <p><strong>تصوير احترافي</strong></p>
+                        <p><strong>تصوير ليلي متقدم</strong></p>
+                    </div>
+                    <div class="spec-card">
+                        <h4><i class="fas fa-battery-full"></i> البطارية والشحن</h4>
+                        <p><strong>السعة:</strong> ${product.battery}</p>
+                        <p><strong>الشحن:</strong> ${product.charging}</p>
+                    </div>
+                    <div class="spec-card">
+                        <h4><i class="fas fa-signal"></i> الاتصالات</h4>
+                        <p><strong>الشبكة:</strong> ${product.network}</p>
+                        <p><strong>WiFi 6/6E</strong></p>
+                        <p><strong>Bluetooth 5.3</strong></p>
+                        <p><strong>NFC</strong></p>
+                    </div>
+                    <div class="spec-card">
+                        <h4><i class="fas fa-shield-alt"></i> مميزات إضافية</h4>
+                        <p><strong>مقاومة الماء والغبار</strong></p>
+                        <p><strong>أمان بيومتري متقدم</strong></p>
+                        <p><strong>مكبرات صوت ستيريو</strong></p>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 2rem; border-radius: 15px; margin-top: 2rem; text-align: center;">
+                    <h3 style="margin-bottom: 1.5rem;">تواصل معنا الآن للطلب!</h3>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="tel:+213540203685" class="btn" style="background: white; color: #667eea;">
+                            <i class="fas fa-phone"></i> اتصل: +213 540 203 685
+                        </a>
+                        <a href="https://wa.me/213540203685?text=مرحباً، أريد طلب ${product.name} مع خطة التقسيط" class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> واتساب: +213 540 203 685
+                        </a>
+                        <a href="mailto:ch9work@gmail.com?subject=استفسار عن ${product.name}" class="btn" style="background: #dc3545; color: white;">
+                            <i class="fas fa-envelope"></i> إيميل: ch9work@gmail.com
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        // إغلاق النافذة المنبثقة
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        // البحث والفلترة
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchBox').value.toLowerCase();
+            const brandFilter = document.getElementById('brandFilter').value;
+            const displayFilter = document.getElementById('displayFilter').value;
+            const refreshFilter = document.getElementById('refreshFilter').value;
+            const sortFilter = document.getElementById('sortFilter').value;
+
+            let filtered = products.filter(product => {
+                const matchSearch = product.name.toLowerCase().includes(searchTerm) ||
+                                  product.brand.toLowerCase().includes(searchTerm) ||
+                                  product.display.toLowerCase().includes(searchTerm) ||
+                                  product.processor.toLowerCase().includes(searchTerm);
+                
+                const matchBrand = !brandFilter || product.brand === brandFilter;
+                const matchDisplay = !displayFilter || product.display === displayFilter;
+                const matchRefresh = !refreshFilter || product.refreshRate === parseInt(refreshFilter);
+
+                return matchSearch && matchBrand && matchDisplay && matchRefresh;
+            });
+
+            // الترتيب
+            switch(sortFilter) {
+                case 'price-low':
+                    filtered.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filtered.sort((a, b) => b.price - a.price);
+                    break;
+                case 'rating':
+                    filtered.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'refresh':
+                    filtered.sort((a, b) => b.refreshRate - a.refreshRate);
+                    break;
+                default: // newest
+                    filtered.sort((a, b) => b.id - a.id);
+            }
+
+            displayProducts(filtered);
+
+            // التمرير إلى المنتجات عند البحث
+            if(searchTerm) {
+                document.getElementById('productsGrid').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // إضافة مستمعات الأحداث
+        document.getElementById('searchBox').addEventListener('input', filterProducts);
+        document.getElementById('brandFilter').addEventListener('change', filterProducts);
+        document.getElementById('displayFilter').addEventListener('change', filterProducts);
+        document.getElementById('refreshFilter').addEventListener('change', filterProducts);
+        document.getElementById('sortFilter').addEventListener('change', filterProducts);
+
+        // إغلاق النافذة عند النقر خارجها
+        window.onclick = function(event) {
+            const modal = document.getElementById('productModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // عرض المنتجات عند تحميل الصفحة
+        displayProducts();
+    </script>
+</body>
+</html>
